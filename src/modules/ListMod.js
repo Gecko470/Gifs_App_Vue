@@ -16,7 +16,7 @@ export default {
         async fetchGifs(context, termino) {
             context.commit('setLoading')
             try {
-                const data = await fetch('https://api.giphy.com/v1/gifs/search?api_key=oyRB1czUtgUqAGWGUfET37v9KnoYq3oa&q=' + termino + '&limit=45')
+                const data = await fetch('https://api.giphy.com/v1/gifs/search?mi_api_key&q=' + termino + '&limit=45')
                 const datos = await data.json()
                 context.commit('ListMod/setList', datos["data"], {root: true})
                 context.commit('modHistorial/setHistorial', termino, {root: true})
